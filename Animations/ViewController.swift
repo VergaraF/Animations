@@ -13,9 +13,22 @@ class ViewController: UIViewController {
 
     @IBOutlet var alienImage: UIImageView!
     
+    let maxValue = 5
+    var counter:Int = 1
+    
     @IBAction func updateOurAlienButtonListener(sender: AnyObject) {
-        self.alienImage.image = UIImage(named: "frame2.png")
+        if (counterReachedMaxVal()){
+            counter = 0
+        }
         
+        counter += 1
+        
+        self.alienImage.image = UIImage(named: "frame" + String(counter) + ".png")
+        
+    }
+    
+    private func counterReachedMaxVal() -> Bool{
+        return counter == maxValue
     }
     override func viewDidLoad() {
         super.viewDidLoad()
