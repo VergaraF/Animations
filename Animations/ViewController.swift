@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var alienImage: UIImageView!
     
+//    let OFFSET: CGPoint = 400
     let MAX_VALUE = 5
     var counter:Int = 1
     
