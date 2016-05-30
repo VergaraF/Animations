@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         self.alienImage.image = UIImage(named: "frame" + String(counter) + ".png")
         
     }
-    
+     
     private func counterReachedMaxVal() -> Bool{
         return counter == maxValue
     }
