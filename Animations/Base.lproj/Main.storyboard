@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animations" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,44 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame1.png" translatesAutoresizingMaskIntoConstraints="NO" id="xQQ-41-8On">
+                                <rect key="frame" x="164" y="20" width="272" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="EVU-Yl-eDc"/>
+                                    <constraint firstAttribute="width" constant="272" id="WfE-iG-J9k"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bS9-ip-apx">
+                                <rect key="frame" x="240" y="297" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bkl-WH-Cl6"/>
+                                    <constraint firstAttribute="width" constant="120" id="cNt-nA-pWQ"/>
+                                </constraints>
+                                <state key="normal" title="Update Our Alien"/>
+                                <connections>
+                                    <action selector="updateOurAlienButtonListener:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8BU-c2-EoM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xQQ-41-8On" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HHg-E6-DSM"/>
+                            <constraint firstItem="xQQ-41-8On" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="N8O-cu-vq6"/>
+                            <constraint firstItem="bS9-ip-apx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NdL-R9-ZTm"/>
+                            <constraint firstItem="bS9-ip-apx" firstAttribute="top" secondItem="xQQ-41-8On" secondAttribute="bottom" constant="21" id="TOj-co-3dr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alienImage" destination="xQQ-41-8On" id="7EY-OZ-llk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="440" y="352"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="frame1.png" width="49" height="86"/>
+    </resources>
 </document>

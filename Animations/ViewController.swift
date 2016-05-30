@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+
+    @IBOutlet var alienImage: UIImageView!
+    
+    @IBAction func updateOurAlienButtonListener(sender: AnyObject) {
+        self.alienImage.image = UIImage(named: "frame2.png")
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
