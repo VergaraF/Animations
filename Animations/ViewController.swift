@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var alienImage: UIImageView!
     
-    let maxValue = 5
+    let MAX_VALUE = 5
     var counter:Int = 1
     
     @IBAction func updateOurAlienButtonListener(sender: AnyObject) {
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     }
      
     private func counterReachedMaxVal() -> Bool{
-        return counter == maxValue
+        return counter == MAX_VALUE
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +38,17 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.alienImage.center = CGPoint(x: self.alienImage.center.x - 400, y: self.alienImage.center.y)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(1) { 
+            self.alienImage.center = CGPoint(x: self.alienImage.center.x + 400, y: self.alienImage.center.y)
+        }
+        
     }
 
 
