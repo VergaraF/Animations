@@ -16,15 +16,9 @@ class ViewController: UIViewController {
 //    let OFFSET: CGPoint = 400
     let MAX_VALUE = 5
     var counter:Int = 1
+    var timer = NSTimer()
     
     @IBAction func updateOurAlienButtonListener(sender: AnyObject) {
-        if (counterReachedMaxVal()){
-            counter = 0
-        }
-        
-        counter += 1
-        
-        self.alienImage.image = UIImage(named: "frame" + String(counter) + ".png")
         
     }
      
@@ -34,14 +28,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(ViewController.doAnimation), userInfo: nil, repeats: true)
     }
 
+    func doAnimation(){
+        if (counterReachedMaxVal()){
+            counter = 0
+        }
+        
+        counter += 1
+        
+        self.alienImage.image = UIImage(named: "frame" + String(counter) + ".png")
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidLayoutSubviews() {
+  /*  override func viewDidLayoutSubviews() {
         
         self.alienImage.frame = CGRectMake(100, 20, 0, 0)
        // self.alienImage.alpha = 0
@@ -59,8 +65,8 @@ class ViewController: UIViewController {
             //Drag animation
            // self.alienImage.center = CGPoint(x: self.alienImage.center.x + 400, y: self.alienImage.center.y)
         }
-        
-    }
+ 
+    }*/
 
 
 }
