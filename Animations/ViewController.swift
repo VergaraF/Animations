@@ -42,12 +42,19 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        self.alienImage.center = CGPoint(x: self.alienImage.center.x - 400, y: self.alienImage.center.y)
+        self.alienImage.alpha = 0
+       // self.alienImage.center = CGPoint(x: self.alienImage.center.x - 400, y: self.alienImage.center.y)
     }
     
     override func viewDidAppear(animated: Bool) {
-        UIView.animateWithDuration(1) { 
-            self.alienImage.center = CGPoint(x: self.alienImage.center.x + 400, y: self.alienImage.center.y)
+        UIView.animateWithDuration(1) {
+            
+            
+            //Fade animation
+            self.alienImage.alpha = 1
+            
+            //Drag animation
+           // self.alienImage.center = CGPoint(x: self.alienImage.center.x + 400, y: self.alienImage.center.y)
         }
         
     }
