@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="height" constant="30" id="bkl-WH-Cl6"/>
                                     <constraint firstAttribute="width" constant="120" id="cNt-nA-pWQ"/>
                                 </constraints>
-                                <state key="normal" title="Update Our Alien"/>
+                                <state key="normal" title="Play animation"/>
                                 <connections>
                                     <action selector="updateOurAlienButtonListener:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8BU-c2-EoM"/>
                                 </connections>
@@ -45,6 +45,7 @@
                     </view>
                     <connections>
                         <outlet property="alienImage" destination="xQQ-41-8On" id="7EY-OZ-llk"/>
+                        <outlet property="playButton" destination="bS9-ip-apx" id="RGJ-0t-koS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

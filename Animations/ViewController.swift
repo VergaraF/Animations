@@ -17,8 +17,20 @@ class ViewController: UIViewController {
     let MAX_VALUE = 5
     var counter:Int = 1
     var timer = NSTimer()
+    var isPlaying = true
+    
+    @IBOutlet var playButton: UIButton!
     
     @IBAction func updateOurAlienButtonListener(sender: AnyObject) {
+        if (isPlaying){
+            self.playButton.titleLabel!.text = "Stop animation"
+            self.isPlaying = false
+            self.timer.invalidate()
+        }else{
+            self.playButton.titleLabel!.text = "Stop animation"
+            self.isPlaying = true
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(ViewController.doAnimation), userInfo: nil, repeats: true)
+        }
         
     }
      
