@@ -42,17 +42,20 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        self.alienImage.alpha = 0
+        
+        self.alienImage.frame = CGRectMake(100, 20, 0, 0)
+       // self.alienImage.alpha = 0
        // self.alienImage.center = CGPoint(x: self.alienImage.center.x - 400, y: self.alienImage.center.y)
     }
     
     override func viewDidAppear(animated: Bool) {
         UIView.animateWithDuration(1) {
-            
+            //Changing object size animation (Zoom)
+             self.alienImage.frame = CGRectMake(100, 20, 100, 200)
             
             //Fade animation
-            self.alienImage.alpha = 1
-            
+           // self.alienImage.alpha = 1
+           
             //Drag animation
            // self.alienImage.center = CGPoint(x: self.alienImage.center.x + 400, y: self.alienImage.center.y)
         }
